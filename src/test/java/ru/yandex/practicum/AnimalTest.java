@@ -16,8 +16,8 @@ public class AnimalTest {
     private static final String exceptMessage = "Неизвестный вид животного, используйте значение Травоядное или Хищник";
     private Animal animal;
 
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
+//    @Rule
+//    public ExpectedException thrown = ExpectedException.none();
 
     @Before
     public void createInstanceAnimal() {
@@ -41,11 +41,8 @@ public class AnimalTest {
     }
 
 
-    @Test
+    @Test(expected = Exception.class)
     public void getFoodCheckException() throws Exception {
-
-        thrown.expect(Exception.class);
-        thrown.expectMessage(exceptMessage);
         List<String> list = animal.getFood("Всеядное");
     }
 

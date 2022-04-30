@@ -22,8 +22,8 @@ public class LionTest {
     private static final String invalidGender = "Чудо в перышках";
     private static final String exceptionMessage = "Используйте допустимые значения пола животного - самей или самка";
 
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
+//    @Rule
+//    public ExpectedException thrown = ExpectedException.none();
 
     @Mock
     private Feline feline;
@@ -63,11 +63,9 @@ public class LionTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void checkExceptionCreateLion() throws Exception {
 
-        thrown.expect(Exception.class);
-        thrown.expectMessage(exceptionMessage);
         Lion lion = new Lion(invalidGender, feline);
     }
 }

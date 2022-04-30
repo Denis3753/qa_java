@@ -45,12 +45,15 @@ public class LionTest {
         Lion lionMale = new Lion(genderMale, feline);
         boolean actual = lionMale.doesHaveMane();
         assertTrue(actual);
+    }
+
+    @Test
+    public void doesNotHaveMane() throws Exception {
 
         Lion lionFemale = new Lion(genderFemale, feline);
         boolean actual2 = lionFemale.doesHaveMane();
         assertFalse(actual2);
     }
-
 
     @Test
     public void getFood() throws Exception {
